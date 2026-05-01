@@ -1,3 +1,10 @@
+<?php
+// Đảm bảo $path được định nghĩa
+if (!isset($path)) {
+    $current_dir = basename(dirname($_SERVER['PHP_SELF']));
+    $path = ($current_dir == 'admin') ? '../' : '';
+}
+?>
 <footer class="footer-dark mt-5 pt-5 pb-3">
     <div class="container">
         <div class="row g-4 mb-5">
@@ -42,10 +49,5 @@
     </div>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-
 <script src="<?php echo $path; ?>assets/js/main.js"></script>
-
-</body>
-</html>

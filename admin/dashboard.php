@@ -6,6 +6,8 @@ error_reporting(E_ALL);
 if (session_status() === PHP_SESSION_NONE) { session_start(); }
 require_once '../includes/db_config.php';
 
+global $conn;
+
 // Kiểm tra quyền Admin
 if (!isset($_SESSION['user']) || $_SESSION['user']['role'] != 2) {
     header('Location: ../index.php'); exit();
@@ -108,5 +110,3 @@ $total_views   = get_count($conn, "SELECT SUM(count_view) as total FROM motel");
     .bg-opacity-10 { background-color: rgba(0, 0, 0, 0.1); }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
