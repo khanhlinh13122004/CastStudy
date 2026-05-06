@@ -31,6 +31,12 @@ if (mysqli_num_rows($result) == 1) {
         if (empty($user['Avatar']) || $user['Avatar'] === NULL || $user['Avatar'] === 'NULL') {
             $user['Avatar'] = 'default.png';
         }
+        
+        // Chuẩn hóa tên field 'role' (xử lý cả 'Role' và 'role')
+        if (isset($user['Role']) && !isset($user['role'])) {
+            $user['role'] = $user['Role'];
+        }
+        
         $_SESSION['user'] = $user;
 
         header("Location: index.php");

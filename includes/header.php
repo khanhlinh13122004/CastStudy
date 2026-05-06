@@ -46,10 +46,7 @@ $path = ($current_dir == 'admin') ? '../' : '';
                         <li><a class="dropdown-item py-2 rounded-3" href="<?php echo $path; ?>profile.php"><i class="fa-solid fa-user-circle me-2 text-muted"></i> Hồ sơ cá nhân</a></li>
                         <li><a class="dropdown-item py-2 rounded-3" href="<?php echo $path; ?>my-rooms.php"><i class="fa-solid fa-list-check me-2 text-muted"></i> Quản lý tin đăng</a></li>
         
-                <?php if(isset($_SESSION['user']['Role']) && $_SESSION['user']['Role'] == 2): ?> 
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item text-primary fw-bold rounded-3" href="<?php echo $path; ?>admin/dashboard.php"><i class="fa-solid fa-gauge-high me-2"></i> Quản trị hệ thống</a></li>
-                 <?php elseif(isset($_SESSION['user']['role']) && $_SESSION['user']['role'] == 2): ?>
+                <?php if(isset($_SESSION['user']['role']) && $_SESSION['user']['role'] == 2): ?> 
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item text-primary fw-bold rounded-3" href="<?php echo $path; ?>admin/dashboard.php"><i class="fa-solid fa-gauge-high me-2"></i> Quản trị hệ thống</a></li>
                  <?php endif; ?>
